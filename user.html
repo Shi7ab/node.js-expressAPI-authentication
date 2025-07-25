@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <ul id="user-list">
+        <!-- User list will be populated here -->   
+    </ul>
+    <script>
+        const userList = document.getElementById('user-list');
+       /* const user = {
+            name: 'Shihab',
+            age: 25,
+            email: 'email@gmail.com',
+            password: '123456',
+            address: 'Dhaka, Bangladesh'
+        }
+
+        fetch('http://localhost:5000', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)  
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });*/
+
+        // Fetch users
+      /*  fetch('http://localhost:5000/api/users')    
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(user => {
+                const li = document.createElement('li');
+                li.textContent = `Name: ${user.name}, Age: ${user.age}, Email: ${user.email}`;
+                userList.appendChild(li);
+                console.log(`Name: ${user.name}, Age: ${user.age}, Email: ${user.email}`);
+            });
+            console.log('Users:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+        */
+
+    </script>
+</body>
+</html>

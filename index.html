@@ -1,0 +1,43 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Send User</title>
+</head>
+<body>
+  <h2>Send User to MongoDB</h2>
+  <form id="userForm">
+    <input type="text" name="name" placeholder="Enter name" required />
+    <input type="email" name="email" placeholder="Enter email" required />
+    <input type="password" name="password" placeholder="Enter password" required />
+    <button type="submit">Send</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('userForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        password: formData.get('password')
+      };
+      const res = await fetch('/api/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await res.json();
+      if (!res.ok) {
+        throw new Error(result.error || 'Failed to send user');
+      }
+      console.log('User sent:', result);
+      // Show success message
+      console.log('User sent successfully:', result);
+      // alert(result.message || 'Done!');
+    });
+  </script>
+</body>
+</html>
